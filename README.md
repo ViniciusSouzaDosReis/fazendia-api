@@ -4,14 +4,14 @@ Uma API para auxiliar o fazendario a administrar a sua fazenda.
 
 ## Modo de intalação:
 ``` 
-git clone  
+git clone
 ```
 Inicie o projeto em sua IDE favorida :D
 
 ## Video Pitch 
-// TODO
+https://www.youtube.com/watch?v=DpzPcGdfuBs
 ## Video Usando o Produto
-// TODO
+https://www.youtube.com/watch?v=gqo2eFkBveM
 ## Endpoints
 
 - Colheitas
@@ -20,12 +20,12 @@ Inicie o projeto em sua IDE favorida :D
   - [Listar Varias Colheitas](#listar-varias-colheitas-de-uma-fazenda)
 - Distribuição
   - [Criar Distribuicao](#cadastrar-distribuição)
-  - Listar Varias Distribuicoes
-  - Listar uma unica Distribuicao
+  - [Listar Varias Distribuicoes](#listar-varias-distribuicoes)
 - Fazenda
-  - Listar Varias Fazendas
+  - [Listar Varias Fazendas](#listar-fazendas-próximas)
 - Usuario
-  - Login
+  - [Login](#login-do-usuário)
+  - [Listar Ids de Fazenda e Colheitas de um usuario](#listar-ids-de-colheitas-e-fazendas)
 
 ### Criar Colheita com Planta
 
@@ -509,25 +509,46 @@ Resposta Exemplo
 
 
 
-### Detalhes Despesa
+### Listar Ids de Colheitas e Fazendas
 
-`GET` naofalindo/api/despesa/{id}
+`GET` /api/usuarios/{userId}/fazenda-colheitas
 
 *Exemplo de resposta*
 
-```js
+```json
 {
-    valor: 100.59,
-    data: '2023-12-27',
-    contaId: 1,
-    categoriaId: 1,
-    descricao: 'cinema com os amigos'
+    "fazendaIds": [
+        1
+    ],
+    "colheitaIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+    ]
 }
 ```
 
 *Resposta*
 
-| código | descrição 
-|--------|----------
-|200| os dados foram retornados
-|404| não foi encontrada despesa com esse ID
+| código |	descrição |
+|-------------|--------|
+|200|	resposta exemplo|
+|400|	campos inválidos|
+|500|	erro interno do servidor|

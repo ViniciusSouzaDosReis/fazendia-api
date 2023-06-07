@@ -23,8 +23,11 @@ public class TokenService {
 
   public Token generateToken(Credencial credencial) {
     Algorithm alg = Algorithm.HMAC256("meusecret");
+    Usuario usuario = usuarioRepository.findByEmail(credencial.email()).orElseThrow(
+        () -> new JWTVerificationException("Usuário não encontrado"));
     var jwt = JWT.create()
         .withSubject(credencial.email())
+        .withClaim("userId", usuario.getId()) // Adiciona o ID do usuário como uma claim
         .withIssuer("Fazendia")
         .withExpiresAt(Instant.now().plus(20, ChronoUnit.MINUTES))
         .sign(alg);

@@ -29,11 +29,6 @@ public class DistribuicaoController {
   @Autowired
   PagedResourcesAssembler<Object> assembler;
 
-  @GetMapping("/{id}")
-  public ResponseEntity<Distribuicao> show(@PathVariable Long id) {
-    return ResponseEntity.ok(getDistribuicao(id));
-  }
-
   @GetMapping
   public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) Long colheitaId,
       @PageableDefault(size = 5) Pageable pageable) {
