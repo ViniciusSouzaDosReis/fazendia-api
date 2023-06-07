@@ -4,7 +4,7 @@ Uma API para auxiliar o fazendario a administrar a sua fazenda.
 
 ## Modo de intalação:
 ``` 
-git clone
+git clone https://github.com/ViniciusSouzaDosReis/fazendia-api.git
 ```
 Inicie o projeto em sua IDE favorida :D
 
